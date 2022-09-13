@@ -1,0 +1,23 @@
+[33mcommit 6c03e0f3bbf341149e9a6f6e7c1fe4485abe77a6[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Stefan Zugun <stefan.zugun@bath.edu>
+Date:   Tue Sep 13 14:21:34 2022 +0300
+
+    Project start
+
+[33mcommit 4bc559d1b2bceea9e14a73bc0f5ced65394757de[m
+Author: Stefan Zugun <stefan.zugun@bath.edu>
+Date:   Tue Sep 13 13:57:41 2022 +0300
+
+    Test GIT and see if it works
+
+[33mcommit 2bc67d5cf014d5f8eb45905bd504af90d50c088a[m
+Author: Stefan Zugun <stefan.zugun@bath.edu>
+Date:   Tue Sep 13 13:51:51 2022 +0300
+
+    Created the Project
+
+[33mcommit 09f685d457eb3106af80cfaec485807cc06eaf16[m
+Author: Stefan Zugun <stefan.zugun@bath.edu>
+Date:   Tue Sep 13 13:50:48 2022 +0300
+
+    Created App.js
