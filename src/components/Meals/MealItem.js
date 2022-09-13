@@ -1,6 +1,8 @@
 import React from "react";
 
 import classes from "./MealItem.module.css";
+import MealItemForm from "./MealItemForm";
+import Input from "./Input";
 
 const MealItems = (props) => {
   const price = `$${props.price.toFixed(2)}`;
@@ -12,7 +14,20 @@ const MealItems = (props) => {
         <div className={classes.description}>{props.description}</div>
         <div className={classes.price}>{price}</div>
       </div>
-      <div>Foo</div>
+      <div>
+        <Input
+          label="Amount"
+          input={{
+            id: "amount",
+            type: "number",
+            min: "1",
+            max: "5",
+            step: "1",
+            defaultValue: "1",
+          }}
+        />
+        <MealItemForm />
+      </div>
     </li>
   );
 };
