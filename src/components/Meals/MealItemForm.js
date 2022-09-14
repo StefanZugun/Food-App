@@ -1,10 +1,10 @@
 import React from "react";
 import classes from "./MealItemForm.module.css";
 
-const MealItemForm = () => {
+const MealItemForm = (props) => {
   return (
     <div className={classes.form}>
-      <button>+Add</button>
+      <button onClick={props.onClick}>+Add</button>
     </div>
   );
 };
