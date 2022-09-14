@@ -1,9 +1,10 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 import Cart from "./components/Cart/Cart";
 import Header from "./components/Layout/Header";
 import AvailableMeals from "./components/Meals/AvailableMeals";
 import MealsSummary from "./components/Meals/MealsSummary";
+import CartProvider from "./store/CartProvider";
 
 const DUMMY_MEALS = [
   {
@@ -45,12 +46,12 @@ function App() {
   };
 
   return (
-    <>
+    <CartProvider>
       <Header onShowCart={modalOpenHandler} />
       <MealsSummary />
       <AvailableMeals meals={DUMMY_MEALS} />
       {modalIsActive && <Cart onCloseCart={modalCloseHandler} />}
-    </>
+    </CartProvider>
   );
 }
 
