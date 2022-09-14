@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import Cart from "./components/Cart/Cart";
 import Header from "./components/Layout/Header";
 import AvailableMeals from "./components/Meals/AvailableMeals";
@@ -31,12 +33,23 @@ const DUMMY_MEALS = [
 ];
 
 function App() {
+  const [modalIsActive, setModalIsActive] = useState(false);
+
+  //Function that closes the Modal and Shopping Cart
+  const modalCloseHandler = () => {
+    setModalIsActive(false);
+  };
+
+  const modalOpenHandler = () => {
+    setModalIsActive(true);
+  };
+
   return (
     <>
-      <Header />
+      <Header onShowCart={modalOpenHandler} />
       <MealsSummary />
       <AvailableMeals meals={DUMMY_MEALS} />
-      <Cart />
+      {modalIsActive && <Cart onCloseCart={modalCloseHandler} />}
     </>
   );
 }
