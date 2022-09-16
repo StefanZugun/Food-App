@@ -3,28 +3,32 @@ import Modal from "../UI/Modal";
 import CartContext from "../../store/cart-context";
 
 import classes from "./Cart.module.css";
+import CartItem from "./CartItem";
 
 const Cart = (props) => {
   const cartCtx = useContext(CartContext);
 
   const cartItems = (
     <ul className={classes["cart-items"]}>
-      {["Sushi"].map((item) => (
-        <div key={item.id}>
-          <li>{item.name}</li>
-        </div>
+      {cartCtx.items.map((item) => (
+        <CartItem
+          key={item.id}
+          name={item.name}
+          price={item.price}
+          amount={item.amount}
+        />
       ))}
     </ul>
   );
-  console.log(cartCtx);
+
   return (
     <Modal onCloseCart={props.onCloseCart}>
-      {cartItems}
       {cartCtx.totalAmount !== 0 && (
         <div>
+          {cartItems}
           <div className={classes.total}>
             <span>Total Amount</span>
-            <span>{cartCtx.totalAmount}</span>
+            <span>${cartCtx.totalAmount.toFixed(2)}</span>
           </div>
           <div className={classes.actions}>
             <button
