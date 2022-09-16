@@ -9,11 +9,11 @@ const Cart = (props) => {
   const cartCtx = useContext(CartContext);
 
   const cartItemRemoveHandler = (id) => {
-    console.log("Remove");
+    cartCtx.removeItem(id);
   };
 
   const cartItemAddHandler = (item) => {
-    console.log("Add");
+    cartCtx.addItem(item);
   };
 
   const cartItems = (
